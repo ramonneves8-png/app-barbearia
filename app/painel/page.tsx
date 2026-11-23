@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '../../utils/supabase/client'
 
+const LINK_ASSINATURA = 'https://mpago.la/1sYhkZJ'
+
 type Agendamento = {
   id: string
   cliente_nome: string
@@ -28,7 +30,6 @@ export default function Painel() {
   const [carregando, setCarregando] = useState(true)
   const [mensagem, setMensagem] = useState('')
 
-  // campos do formulário de novo serviço
   const [nome, setNome] = useState('')
   const [preco, setPreco] = useState('')
   const [duracao, setDuracao] = useState('')
@@ -130,7 +131,24 @@ export default function Painel() {
 
         {mensagem && <p className="mensagem">{mensagem}</p>}
 
-        {barbearia && (
+        {barbearia && !barbearia.assinatura_ativa && (
+          <div style={{ marginTop: 20, padding: 20, border: '1px solid var(--cor-dourado)', textAlign: 'center' }}>
+            <p style={{ marginBottom: 12 }}>
+              Sua assinatura ainda não está ativa. Assine para liberar o painel completo.
+            </p>
+            <a
+              href={LINK_ASSINATURA}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="botao"
+              style={{ textDecoration: 'none', display: 'inline-block', width: 'auto', padding: '10px 24px' }}
+            >
+              Assinar agora
+            </a>
+          </div>
+        )}
+
+        {barbearia && barbearia.assinatura_ativa && (
           <>
             <div style={{ display: 'flex', gap: 8, margin: '20px 0', borderBottom: '1px solid var(--cor-borda)' }}>
               <button
