@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --cor-fundo: #1a1611;
+  --cor-fundo-painel: #241f19;
+  --cor-texto: #f5efe3;
+  --cor-texto-suave: #b8ae9c;
+  --cor-dourado: #c89b3c;
+  --cor-borda: #3a332a;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.fonte-destaque {
+  font-family: var(--font-bebas), sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.painel {
+  width: 100%;
+  max-width: 420px;
+  background: var(--cor-fundo-painel);
+  border: 1px solid var(--cor-borda);
+  border-top: 3px solid var(--cor-dourado);
+  padding: 32px 28px;
+}
+
+.titulo {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  color: var(--cor-texto-suave);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.rotulo {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 6px;
+}
+
+.entrada {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-size: 1rem;
+}
+
+.entrada:focus {
+  outline: none;
+  border-color: var(--cor-dourado);
+}
+
+.botao {
+  width: 100%;
+  padding: 12px;
+  background: var(--cor-dourado);
+  color: #1a1611;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #d9ad52;
+}
+
+.mensagem {
+  margin-top: 16px;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
