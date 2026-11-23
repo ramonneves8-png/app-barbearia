@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createClient } from '../../../utils/supabase/client'
 
+export const instant = false
+
 type Servico = { id: string; nome: string; preco: number; duracao_minutos: number }
 
 export default function PaginaBarbearia() {
