@@ -15,6 +15,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Sistema de Agendamento para Barbearias",
+  manifest: "/manifest.json",
+};
+
+export const viewport = {
+  themeColor: "#1a1611",
 };
 
 export default function RootLayout({
