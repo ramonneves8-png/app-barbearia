@@ -53,7 +53,7 @@ export default function PaginaBarbearia() {
       servico_id: servicoId,
       cliente_nome: clienteNome,
       cliente_telefone: clienteTelefone,
-      data_hora: dataHora,
+     data_hora: new Date(dataHora).toISOString(),
     })
 
     if (error) {
