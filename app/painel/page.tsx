@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '../../utils/supabase/client'
 
-const LINK_ASSINATURA = 'meu-link-aqui'
+const LINK_ASSINATURA = 'https://mpago.la/1sYhkZJ'
 
 type Agendamento = {
   id: string
