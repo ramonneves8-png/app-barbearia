@@ -48,6 +48,11 @@ export default function PaginaBarbearia() {
     e.preventDefault()
     setMensagem('Agendando...')
 
+    const [dataParte, horaParte] = dataHora.split('T')
+const [ano, mes, dia] = dataParte.split('-').map(Number)
+const [hora, minuto] = horaParte.split(':').map(Number)
+const dataLocal = new Date(ano, mes - 1, dia, hora, minuto)
+
     const { error } = await supabase.from('agendamentos').insert({
       barbearia_id: barbearia.id,
       servico_id: servicoId,
